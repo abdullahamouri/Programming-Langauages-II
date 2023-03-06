@@ -1,0 +1,55 @@
+// Programming langauges II week 1 <lab1 Qestion2>
+
+
+#include <stdio.h>
+
+int getBodyIndex(float h , float w){
+    float massIndex;
+    massIndex = w / (h * h);
+    
+   if(massIndex > 0 && massIndex <= 18)
+        return 1;
+    if(massIndex > 19 && massIndex <= 25)    
+        return 2;
+    if(massIndex >= 26 && massIndex <= 30)
+        return 3;
+    if(massIndex > 30)
+        return 4;
+        
+}
+
+void main(void)
+{
+     float hight;
+     float width;
+     int massIndex;
+
+     printf("please enter a hight value : ");
+     scanf("%f",&hight);
+    
+     printf("plesae enter a width value : ");
+     scanf("%f",&width);
+    
+    
+        massIndex =getBodyIndex(hight,width);
+    
+        printf("Mass Index : %d\n\n",massIndex);
+    
+        switch(massIndex){
+        
+        case 1: printf("Zayif !\n\n");
+            break;
+        
+        case 2: printf("normal !\n\n");
+            break;
+            
+        case 3: printf("kilolu !\n\n");
+            break;
+            
+        case 4: printf("obez !\n\n");
+            break;
+            
+        default: printf("wrong choice !\n\n");
+    }
+
+}

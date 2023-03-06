@@ -1,0 +1,54 @@
+// Programming langauges II week 1 <lab1>
+
+
+#include <stdio.h>
+#define MAXSIZE 100
+
+int calculate(int students_No, int pMark){
+    int marks[MAXSIZE];
+    int sum=0;
+    int i;
+    float average=0;
+    int passedStudents=0;
+    int failedStudents=0;
+    
+    printf("\n\n\n");
+    
+    printf("please enter the marks of %d students : \n",students_No);
+        for(i=0; i<students_No; i++){
+            printf("student [%d] : ",i+1);
+            scanf("%d",&marks[i]);
+        }
+        
+        for(i=0; i<students_No; i++){
+            
+            if(marks[i] < pMark)
+                failedStudents++;
+                
+             sum+=marks[i];      
+        }
+          printf("Total students number : %d\n",students_No);
+        
+        average = sum / students_No;
+        printf("Average : %.2f\n\n",average);
+        
+        return failedStudents;
+    }
+
+void main(void)
+{
+   int studentsNo;
+   int passMark;
+   int failedStudents;
+   int i;
+   
+   printf("please enter the number of students [number <= 100] : ");
+   scanf("%d",&studentsNo);
+   
+   printf("please enter the passing mark : ");
+   scanf("%d",&passMark);
+   failedStudents = calculate(studentsNo,passMark);
+   printf("Failed students number : %d\n",failedStudents);
+   printf("Passed Students number : %d\n",studentsNo - failedStudents);
+   
+}
